@@ -13,9 +13,7 @@ Include the URL of your launchpad blueprint:
 https://blueprints.launchpad.net/congress/+spec/example
 
 Introduction paragraph -- why are we doing anything? A single paragraph of
-prose that operators can understand. The title and this first paragraph
-should be used as the subject line and body of the commit message
-respectively.
+prose that operators can understand.
 
 Some notes about using this template:
 
@@ -24,7 +22,7 @@ Some notes about using this template:
 * Please wrap text at 79 columns.
 
 * The filename in the git repository should match the launchpad URL, for
-  example a URL of: https://blueprints.launchpad.ncongresslum/+spec/awesome-thing
+  example a URL of: https://blueprints.launchpad.net/congress/+spec/awesome-thing
   should be named awesome-thing.rst
 
 * Please do not delete any of the sections in this template.  If you have
@@ -41,6 +39,7 @@ Some notes about using this template:
   based purely on plain text.  Plain text will allow review to proceed without
   having to look at additional files which can not be viewed in gerrit.  It
   will also allow inline feedback on the diagram itself.
+
 
 Problem description
 ===================
@@ -63,12 +62,42 @@ propose to solve this problem?
 If this is one part of a larger effort make it clear where this piece ends. In
 other words, what's the scope of this effort?
 
+
 Alternatives
 ------------
 
 What other ways could we do this thing? Why aren't we using those? This doesn't
 have to be a full literature review, but it should demonstrate that thought has
 been put into why the proposed solution is an appropriate one.
+
+
+Policy
+------
+
+Using the Congress datalog syntax, write out an example policy using
+https://wiki.openstack.org/wiki/Congress#Policy_Language
+
+Example:
+
+error(vm) :-
+    nova:virtual_machine(vm),
+    ids:ip_packet(src_ip, dst_ip),
+    neutron:port(vm, src_ip), //finds out the port that has the VM’s IP
+    ids:ip_blacklist(dst_ip).
+
+
+Policy Actions
+--------------
+
+Describe the policy activities in terms of monitoring, reactive, proactive,
+and other ways to explain how the policy will implement it's desired state.
+
+
+Data Sources
+------------
+
+Describe which projects and/or services the data is coming from
+
 
 Data model impact
 -----------------
@@ -89,6 +118,7 @@ Questions which need to be addressed by this section include:
 * How will the initial set of new data objects be generated, for example if you
   need to take into account existing instances, or modify other existing data
   describe how that will work.
+
 
 REST API impact
 ---------------
@@ -127,8 +157,8 @@ Each API method which is either added or changed should have the following
 * Discuss any policy changes, and discuss what things a deployer needs to
   think about when defining their policy.
 
-Example JSON schema definitions can be found icongress Solum tree
-http://git.openstack.org/cgit/ocongressackcongressm/tree/solum/api/openstack/compute/schemas/v3
+Example JSON schema definitions can be found in the Nova tree
+http://git.openstack.org/cgit/openstack/nova/tree/nova/api/openstack/compute/schemas/v3
 
 Note that the schema should be defined as restrictively as
 possible. Parameters which are required should be marked as such and
@@ -138,6 +168,7 @@ additionaProperties should be False).
 
 Reuse of existing predefined parameter types such as regexps for
 passwords and user defined names is highly encouraged.
+
 
 Security impact
 ---------------
@@ -180,7 +211,7 @@ Other end user impact
 Aside from the API, are there other ways a user will interact with this
 feature?
 
-* Does this change have an imcongresson python-solumclient? What does the user
+* Does this change have an impact on python-congressclient? What does the user
   interface there look like?
 
 Performance Impact
@@ -195,6 +226,9 @@ Examples of things to consider here include:
 * A periodic task might look like a small addition but if it calls conductor or
   another service the load is multiplied by the number of nodes in the system.
 
+* Scheduler filters get called once per host for every instance being created,
+  so any latency they introduce is linear with the size of the system.
+
 * A small change in a utility function or a commonly used decorator can have a
   large impacts on performance.
 
@@ -205,8 +239,8 @@ Examples of things to consider here include:
 * Will the change include any locking, and if so what considerations are there
   on holding the lock?
 
-Other deployer impact
----------------------
+Other Deployer Impacts
+----------------------
 
 Discuss things that will affect how you deploy and configure OpenStack
 that have not already been mentioned, such as:
@@ -229,7 +263,7 @@ that have not already been mentioned, such as:
   we have a special case in the code? Do we assume that the operator will
   recreate all the instances in their cloud?
 
-Developer impact
+Developer Impact
 ----------------
 
 Discuss things that will affect other developers working on OpenStack,
@@ -268,11 +302,11 @@ but we're mostly trying to understand the timeline for implementation.
 Dependencies
 ============
 
-* Include specific references to specs andcongresslueprints in solum, or in other
+* Include specific references to specs and/or blueprints in congress, or in other
   projects, that this one either depends on or is related to.
 
-* If this requires functionality of another project that is notcongressently used
-  by Solum (such as the glance v2 API when we previously only required v1),
+* If this requires functionality of another project that is not currently used
+  by congress (such as the glance v2 API when we previously only required v1),
   document that fact.
 
 * Does this feature require any new library dependencies or code otherwise not

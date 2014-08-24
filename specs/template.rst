@@ -10,7 +10,7 @@ Example Spec - The title of your blueprint
 
 Include the URL of your launchpad blueprint:
 
-https://blueprints.launchpad.net/nova/+spec/example
+https://blueprints.launchpad.net/congress/+spec/example
 
 Introduction paragraph -- why are we doing anything? A single paragraph of
 prose that operators can understand.
@@ -22,7 +22,7 @@ Some notes about using this template:
 * Please wrap text at 79 columns.
 
 * The filename in the git repository should match the launchpad URL, for
-  example a URL of: https://blueprints.launchpad.net/nova/+spec/awesome-thing
+  example a URL of: https://blueprints.launchpad.net/congress/+spec/awesome-thing
   should be named awesome-thing.rst
 
 * Please do not delete any of the sections in this template.  If you have
@@ -72,7 +72,7 @@ been put into why the proposed solution is an appropriate one.
 
 
 Policy
-----------------
+------
 
 Using the Congress datalog syntax, write out an example policy using
 https://wiki.openstack.org/wiki/Congress#Policy_Language
@@ -87,14 +87,14 @@ error(vm) :-
 
 
 Policy Actions
-----------------
+--------------
 
 Describe the policy activities in terms of monitoring, reactive, proactive,
 and other ways to explain how the policy will implement it's desired state.
 
 
 Data Sources
-----------------
+------------
 
 Describe which projects and/or services the data is coming from
 
@@ -211,7 +211,7 @@ Other end user impact
 Aside from the API, are there other ways a user will interact with this
 feature?
 
-* Does this change have an impact on python-novaclient? What does the user
+* Does this change have an impact on python-congressclient? What does the user
   interface there look like?
 
 Performance Impact
@@ -240,7 +240,7 @@ Examples of things to consider here include:
   on holding the lock?
 
 Other Deployer Impacts
----------------------
+----------------------
 
 Discuss things that will affect how you deploy and configure OpenStack
 that have not already been mentioned, such as:
@@ -302,11 +302,11 @@ but we're mostly trying to understand the timeline for implementation.
 Dependencies
 ============
 
-* Include specific references to specs and/or blueprints in nova, or in other
+* Include specific references to specs and/or blueprints in congress, or in other
   projects, that this one either depends on or is related to.
 
 * If this requires functionality of another project that is not currently used
-  by Nova (such as the glance v2 API when we previously only required v1),
+  by congress (such as the glance v2 API when we previously only required v1),
   document that fact.
 
 * Does this feature require any new library dependencies or code otherwise not
