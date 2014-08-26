@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Tim Hinrichs <thinrichs@vmware.com>
+Workflow+1: Tim Hinrichs <thinrichs@vmware.com>
+Code-Review+2: Peter Balland <peter@balland.net>
+Submitted-by: Jenkins
+Submitted-at: Tue, 26 Aug 2014 15:34:10 +0000
+Reviewed-on: https://review.openstack.org/116530
+Project: stackforge/congress-specs
+Branch: refs/heads/master
