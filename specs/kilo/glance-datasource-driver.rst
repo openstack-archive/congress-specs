@@ -67,17 +67,17 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 N/A
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -91,7 +91,7 @@ Assignee(s)
 Primary assignee:
     arosen
 
-Work Items
+Work items
 ----------
 
 
@@ -105,7 +105,7 @@ Testing
 
 Will add tempest tests.
 
-Documentation Impact
+Documentation impact
 ====================
 
 N/A

@@ -141,18 +141,18 @@ Other end user impact
 None.
 
 
-Performance Impact
+Performance impact
 ------------------
 
 None.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None.
 
 
-Developer Impact
+Developer impact
 ----------------
 
 None.
@@ -170,18 +170,20 @@ Primary assignee:
 Other contributors:
 
 
-Work Items
+Work items
 ----------
 
 * Define translation functions.
 
-* Implement the new constant tables and function tables to perform the translation.
+* Implement the new constant tables and function tables to perform the
+  translation.
 
 
 Dependencies
 ============
 
-* This is dependent on the implementation of a GBP data-source driver for Congress.
+* This is dependent on the implementation of a GBP data-source driver for
+  Congress.
 
 
 
@@ -191,7 +193,7 @@ Testing
 Some sample input tables will be created and the translation verified by
 checking the contents of the output trigger tables.
 
-Documentation Impact
+Documentation impact
 ====================
 
 All translation details will be documented.

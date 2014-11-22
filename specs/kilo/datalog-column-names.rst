@@ -84,30 +84,33 @@ way to spell the tablename.]
 To do this, Congress would need to know which columns in a table are sufficient
 to uniquely identify a row, which in most cases is just the ID.
 
-Pros: (i) this requires only changes in the datasource drivers; everything else
+Pros:
+(i) this requires only changes in the datasource drivers; everything else
 remains the same
-     (ii) still leveraging database technology under the hood
-     (iii) policy is robust to changes in fields of original data
-Cons: (i) datasource driver can force policy writer to use wide tables
-     (ii) this data model is much different than the original data models
-     (iii) we need primary-key information about tables
+(ii) still leveraging database technology under the hood
+(iii) policy is robust to changes in fields of original data
+
+Cons:
+(i) datasource driver can force policy writer to use wide tables
+(ii) this data model is much different than the original data models
+(iii) we need primary-key information about tables
 
 3) Enhance the Congress policy language to handle objects natively.
 
 Instead of writing a rule like the following ...
 
 p(port_id, name, group) :-
-   neutron:ports(port_id, addr_pairs, security_groups, extra_dhcp_opts,
-   binding_cap, status, name, admin_state_up, network_id, tenant_id,
-   binding_vif, device_owner, mac_address, fixed_ips, router_id, binding_host),
-   neutron:ports.security_groups(security_group, group)
+neutron:ports(port_id, addr_pairs, security_groups, extra_dhcp_opts,
+binding_cap, status, name, admin_state_up, network_id, tenant_id,
+binding_vif, device_owner, mac_address, fixed_ips, router_id, binding_host),
+neutron:ports.security_groups(security_group, group)
 
 we would write a rule such as
 p(port_id, name) :-
-   neutron:ports(port),
-   port.name(name),
-   port.id(port_id),
-   port.security_groups(group)
+neutron:ports(port),
+port.name(name),
+port.id(port_id),
+port.security_groups(group)
 
 The big difference here is that the period (.) is an operator in the language,
 just as in C++/Java.
@@ -186,19 +189,19 @@ Other UIs can expose this enhanced syntax, but since currently all UIs
 just pass policy statements as strings, they will require no actual changes
 to leverage the enhancement.
 
-Performance Impact
+Performance impact
 ------------------
 
 Should have no performance impact, with the possible exception that
 eventually we will want to reverse the preprocessing step for tracing
 so that we present users with a more intuitive trace.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 None
@@ -214,13 +217,13 @@ Primary assignee:
   thinrich
 
 
-Work Items
+Work items
 ----------
 
 * Modify grammar
 * Make datasource schemas available to runtime
 * Add preprocessor to rule AST constructor to convert column references into
-positional references.
+  positional references.
 
 
 Dependencies
@@ -237,7 +240,7 @@ Testing
 No tempest tests are necessary.  Unit tests only.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 Should include modifications to docs to simplify the examples that use

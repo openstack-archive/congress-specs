@@ -96,20 +96,20 @@ Other end user impact
 None
 
 
-Performance Impact
+Performance impact
 ------------------
 
 None
 
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 This change will have an effect as soon as it is merged, but Congress should
 behave exactly as it did without the change.
 
 
-Developer Impact
+Developer impact
 ----------------
 
 The new refactoring will change how programmers write datasource drivers.  The
@@ -128,7 +128,7 @@ Assignee(s)
 ayip
 
 
-Work Items
+Work items
 ----------
 
 1) Write new superclass.
@@ -146,10 +146,11 @@ None
 Testing
 =======
 
-Unit tests for superclass, and modify existing test cases for individual drivers.
+Unit tests for superclass, and modify existing test cases for individual
+drivers.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 This change will include new documentation for how to use the new datasource

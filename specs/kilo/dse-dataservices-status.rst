@@ -87,18 +87,18 @@ Other end user impact
 
 None
 
-Performance Impact
+Performance impact
 ------------------
 
 It will be possible to turn off high-cost status computation; thus, people
 can decide whether each status item is worth the cost of computing it.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 None
@@ -115,12 +115,12 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 - Add implementations for metrics.  The decision as to whether the metric
-is continually computed or computed on demand will be made on a metric-by-metric
-basis.
+  is continually computed or computed on demand will be made on a
+  metric-by-metric basis.
 
 - Add status() method to DeepSix class and return a dictionary of metrics.
 
@@ -137,7 +137,7 @@ status metrics are as expected.  Ideally would also simulate metric computation
 under load.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 None

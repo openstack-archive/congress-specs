@@ -66,9 +66,10 @@ nova: and neutron:) on datasource tablenames.  This proposal simply
 generalizes that idea.
 
 Another approach is to put everything into a single theory and explicitly
-prefix all tables with the module in which they are defined.  Implementationally,
-that is basically what we're doing, but leaving the policies in separate
-datastructures so that they can leverage different theory types.
+prefix all tables with the module in which they are defined.
+Implementationally, that is basically what we're doing, but leaving the
+policies in separate datastructures so that they can leverage different theory
+types.
 
 Many other module systems are available, but this is basically Python's
 module system.  Everything is visible to everything as long as you
@@ -120,28 +121,29 @@ Each API method which is either added or changed should have the following
 create_policy
 
 * Description: create a new policy of the given name, abbreviation, and
-type
+  type
 * Method: POST
 * Normal http response codes: success
 * HTTP errors:
-** conflict: policy already exists
-** bad request: type does not exist
+    ** conflict: policy already exists
+    ** bad request: type does not exist
 * URL: /v1/policy/
-* Parameters: name, abbreviation (for traces), type (Nonrecursive, Materialized)
+* Parameters: name, abbreviation (for traces), type (Nonrecursive,
+  Materialized)
 
 Example:
 curl -X PUT http://localhost:1789/v1/policy -d
-   '{"id": "test_policy",
-     "description": "a great policy",
-     "abbreviation": "test",
-     "type": "nonrecursive"}'
+'{"id": "test_policy",
+"description": "a great policy",
+"abbreviation": "test",
+"type": "nonrecursive"}'
 
 Example output:
-    {"id": "test_policy",
-     "description": "a great policy",
-     "abbreviation": "test",
-     "type": "nonrecursive",
-     "owner": "alice"}'
+{"id": "test_policy",
+"description": "a great policy",
+"abbreviation": "test",
+"type": "nonrecursive",
+"owner": "alice"}'
 
 
 delete_policy: standard deletion operation
@@ -165,17 +167,17 @@ Other end user impact
 
 Users will interact with other policies when writing rules.
 
-Performance Impact
+Performance impact
 ------------------
 
 None
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 None
@@ -191,28 +193,28 @@ Primary assignee:
   thinrichs@vmware.com
 
 
-Work Items
+Work items
 ----------
 
 - Add create_policy/delete_policy to congress/policy/policy.py:Runtime.
-The arguments to create_policy should include name/abbr/type, where
-type is either NonrecursiveRuleTheory or MaterializedViewTheory.
+  The arguments to create_policy should include name/abbr/type, where
+  type is either NonrecursiveRuleTheory or MaterializedViewTheory.
 
 - Change compile.atom to a separate 'module' field and 'table' field to
-avoid repeatedly parsing the tablename.  The 'module' field is None if
-there is none.
+  avoid repeatedly parsing the tablename.  The 'module' field is None if
+  there is none.
 
 - Modify top_down_eval so that at every point in the search, it
-jumps to the policy in which the table is defined (or stays in the
-current policy if 'module' is None).
+  jumps to the policy in which the table is defined (or stays in the
+  current policy if 'module' is None).
 
 - Ensure no infinite loops across theories.  We need to check
-that the graph obtained by rules that cross policy boundaries
-is non-recursive; we can ignore rules that do not cross policy
-boundaries.
+  that the graph obtained by rules that cross policy boundaries
+  is non-recursive; we can ignore rules that do not cross policy
+  boundaries.
 
 - Can leave 'includes' functionality for internal implementation.
-Should not need to use it for the change above.
+  Should not need to use it for the change above.
 
 - Expose this functionality through the API and CLI
 
@@ -276,7 +278,7 @@ q(x) :- policy1:p(x)
 Should throw error.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 Need to add docs that describe new capabilities.

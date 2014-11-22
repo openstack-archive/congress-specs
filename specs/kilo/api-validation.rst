@@ -104,7 +104,7 @@ Other end user impact
 None.
 
 
-Performance Impact
+Performance impact
 ------------------
 
 Validation of inputs will have a negative performance impact on latency and
@@ -138,7 +138,7 @@ Primary assignee:
 Other contributors:
   None
 
-Work Items
+Work items
 ----------
 
 * Create JSON schemas for each API resource (This is already done in the API
@@ -169,7 +169,7 @@ validation is being performed by issuing requests that should and should not
 validate against the schema.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 This change itself does not impact documentation.  The addition of schemas

@@ -41,7 +41,7 @@ class TestTitles(testtools.TestCase):
     def _check_titles(self, fname, titles):
         expected_titles = ('Problem description', 'Proposed change',
                            'Implementation', 'Dependencies',
-                           'Testing', 'Documentation Impact',
+                           'Testing', 'Documentation impact',
                            'References')
         self.assertEqual(
             sorted(expected_titles),
@@ -49,19 +49,20 @@ class TestTitles(testtools.TestCase):
             "Expected titles not found in document %s" % fname)
 
         proposed = 'Proposed change'
-        self.assertIn('Alternatives', titles[proposed])
-        self.assertIn('Data model impact', titles[proposed])
-        self.assertIn('REST API impact', titles[proposed])
-        self.assertIn('Security impact', titles[proposed])
-        self.assertIn('Notifications impact', titles[proposed])
-        self.assertIn('Other end user impact', titles[proposed])
-        self.assertIn('Performance Impact', titles[proposed])
-        self.assertIn('Other deployer impact', titles[proposed])
-        self.assertIn('Developer impact', titles[proposed])
+        msg = 'Subtitle missing from %s' % fname
+        self.assertIn('Alternatives', titles[proposed], message=msg)
+        self.assertIn('Data model impact', titles[proposed], message=msg)
+        self.assertIn('REST API impact', titles[proposed], message=msg)
+        self.assertIn('Security impact', titles[proposed], message=msg)
+        self.assertIn('Notifications impact', titles[proposed], message=msg)
+        self.assertIn('Other end user impact', titles[proposed], message=msg)
+        self.assertIn('Performance impact', titles[proposed], message=msg)
+        self.assertIn('Other deployer impact', titles[proposed], message=msg)
+        self.assertIn('Developer impact', titles[proposed], message=msg)
 
         impl = 'Implementation'
-        self.assertIn('Assignee(s)', titles[impl])
-        self.assertIn('Work Items', titles[impl])
+        self.assertIn('Assignee(s)', titles[impl], message=msg)
+        self.assertIn('Work items', titles[impl], message=msg)
 
     def _check_lines_wrapping(self, tpl, raw):
         for i, line in enumerate(raw.split("\n")):
@@ -95,7 +96,7 @@ class TestTitles(testtools.TestCase):
             with open(filename) as f:
                 data = f.read()
 
-            spec = docutils.core.publish_doctree(data)
+            spec = docutils.core.publish_doctree(data, source_path=filename)
             titles = self._get_titles(spec)
             self._check_titles(filename, titles)
             self._check_lines_wrapping(filename, data)

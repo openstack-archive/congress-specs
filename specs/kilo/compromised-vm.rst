@@ -63,7 +63,7 @@ error(vm) :-
     neutron:port(vm, src_ip),	//finds out the port that has the VM’s IP
     ids:ip_blacklist(dst_ip).
 
-Policy Actions
+Policy actions
 -----------------
 
 * Monitoring: report/log the incident including the VM’s IP address, external
@@ -75,7 +75,7 @@ Policy Actions
     access the VM) and/or a no route network or removing the VM network
     interface(s).
 
-Data Sources
+Data sources
 -----------------
 
 * IDS (intrusion detection service VM): IP address of the offending VM
@@ -83,7 +83,7 @@ Data Sources
 * nova: VM details; instance ID, interface(s) status, instance state, security
     group
 
-Data Model Impact
+Data model impact
 ------------------
 
 none
@@ -112,7 +112,7 @@ Other end user impact
 Unknown at this time
 
 
-Performance Impact
+Performance impact
 ------------------
 
 Unknown at this time
@@ -140,7 +140,7 @@ Assignee(s)
 Unknown at this time
 
 
-Work Items
+Work items
 ----------
 
 * Congress IDS plugin
@@ -169,7 +169,7 @@ Testing
 TBD
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 TBD

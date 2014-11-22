@@ -71,17 +71,17 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 N/A
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -95,7 +95,7 @@ Assignee(s)
 Samta Rangare
 srangare@mvista.com
 
-Work Items
+Work items
 ----------
 
 - Implement cinder driver with essential tables
@@ -113,7 +113,7 @@ Testing
 - Will need to add unit test code
 - Will add tempest tests.
 
-Documentation Impact
+Documentation impact
 ====================
 
 N/A

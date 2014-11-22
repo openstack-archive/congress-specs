@@ -37,13 +37,13 @@ Policy
 
 N/A
 
-Policy Actions
+Policy actions
 --------------
 
 N/A
 
 
-Data Sources
+Data sources
 ------------
 
 N/A
@@ -77,17 +77,17 @@ Other end user impact
 
 *  Users will now have to deploy a db for congress to leverage.
 
-Performance Impact
+Performance impact
 ------------------
 
 * Hopefully none
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -101,7 +101,7 @@ Assignee(s)
 Primary assignee:
     arosen
 
-Work Items
+Work items
 ----------
 
 Implementation
@@ -117,7 +117,7 @@ Testing
 
 Unit tests will be provided
 
-Documentation Impact
+Documentation impact
 ====================
 N/A
 

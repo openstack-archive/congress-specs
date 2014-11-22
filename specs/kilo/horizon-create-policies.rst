@@ -94,19 +94,19 @@ The end user will be able to go to the Policies panel in Horizon and use some
 knobs to write policy rules and create a policy in Congress.
 
 
-Performance Impact
+Performance impact
 ------------------
 
 None.
 
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None.
 
 
-Developer Impact
+Developer impact
 ----------------
 
 None.
@@ -124,7 +124,7 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 - Knobs and form to enter policy details and rules.
@@ -150,7 +150,7 @@ Additional Tempest tests are not needed because the Congress code is not being
 modified here.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 None.

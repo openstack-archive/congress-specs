@@ -86,14 +86,14 @@ error(vm) :-
     ids:ip_blacklist(dst_ip).
 
 
-Policy Actions
+Policy actions
 --------------
 
 Describe the policy activities in terms of monitoring, reactive, proactive,
 and other ways to explain how the policy will implement it's desired state.
 
 
-Data Sources
+Data sources
 ------------
 
 Describe which projects and/or services the data is coming from
@@ -214,7 +214,7 @@ feature?
 * Does this change have an impact on python-congressclient? What does the user
   interface there look like?
 
-Performance Impact
+Performance impact
 ------------------
 
 Describe any potential performance impact on the system, for example
@@ -239,8 +239,8 @@ Examples of things to consider here include:
 * Will the change include any locking, and if so what considerations are there
   on holding the lock?
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 Discuss things that will affect how you deploy and configure OpenStack
 that have not already been mentioned, such as:
@@ -263,7 +263,7 @@ that have not already been mentioned, such as:
   we have a special case in the code? Do we assume that the operator will
   recreate all the instances in their cloud?
 
-Developer Impact
+Developer impact
 ----------------
 
 Discuss things that will affect other developers working on OpenStack,
@@ -291,7 +291,7 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 Work items or tasks -- break the feature up into the things that need to be
@@ -302,8 +302,8 @@ but we're mostly trying to understand the timeline for implementation.
 Dependencies
 ============
 
-* Include specific references to specs and/or blueprints in congress, or in other
-  projects, that this one either depends on or is related to.
+* Include specific references to specs and/or blueprints in congress, or in
+  other projects, that this one either depends on or is related to.
 
 * If this requires functionality of another project that is not currently used
   by congress (such as the glance v2 API when we previously only required v1),
@@ -327,7 +327,7 @@ software configurations available)? If so, are there mitigation plans (3rd
 party testing, gate enhancements, etc).
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 What is the impact on the docs team of this change? Some changes might require

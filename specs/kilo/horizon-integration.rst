@@ -4,9 +4,9 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-==========================================
+================================================
 Congress OpenStack Horizon Dashboard Integration
-==========================================
+================================================
 
 
 https://blueprints.launchpad.net/congress/+spec/horizon-integration
@@ -39,7 +39,7 @@ Proposed change
   Horizon
 * A new panel named `policies` will be added to the `admin` dashboard.
 
-  +-----------+                          +------------+
++-----------+                          +------------+
 |           ++------+                  |            |
 |           ||      |     REST API Call|            |
 |           ||      +------------------>            |
@@ -80,7 +80,7 @@ to integrate congress in a non openstack scenario.
 
 
 Screens
-------
+-------
  none
 
 
@@ -126,17 +126,17 @@ Other end user impact
 * User will be able to data exposed by the DataSources
 
 
-Performance Impact
+Performance impact
 ------------------
 
 none
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 Integration with Devstack.
 
-Developer Impact
+Developer impact
 ----------------
 
 none
@@ -155,7 +155,7 @@ Primary assignee:
 Other contributors:
   <None>
 
-Work Items
+Work items
 ----------
 
 * Add base Panel for Policies
@@ -179,7 +179,7 @@ Testing
 Unit testing using mocks.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 Document the screenflow.

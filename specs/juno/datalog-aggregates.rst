@@ -38,8 +38,8 @@ form:
 Example policies involving aggregates:
 
 1. Restriction on number of ports on a subnet
-error(subnet) :- neutron:networks.subnets(subnet, port), neutron:ports(port, ip),
-count(num_port, port), not gt(num_port, 10)
+error(subnet) :- neutron:networks.subnets(subnet, port),
+neutron:ports(port, ip), count(num_port, port), not gt(num_port, 10)
 
 2. Restriction on average CPU Load on a host
 error(host) :- ceilometer:meters(host, cpu_util), nova:servers(host, vm_host),
@@ -50,7 +50,7 @@ average(x, y, z) :- sum(z, cpu_util), count(y, vm_host), div(x, z, y)
 the design/implementation progresses)
 
 * The aggregates like "SUM", "COUNT" must be defined as ANTLR Terms and
-Congress must be able to parse and compile these terms.
+  Congress must be able to parse and compile these terms.
 
 The initial implementation will use SUM and COUNT as prototype aggregations.
 Other similar aggregates can be considered as enhancements to be taken up
@@ -94,7 +94,7 @@ Other end user impact
 
 End user will be able to write policies involving aggregates.
 
-Performance Impact
+Performance impact
 ------------------
 
 Evaluation of policies involving aggregates may involve additional processing
@@ -119,7 +119,7 @@ Assignee(s)
 Primary assignee:
   Madhu Mohan (mmohan@mvista.com)
 
-Work Items
+Work items
 ----------
 
 * Add new terms in Congress.g to allow ANTLR to recognize aggregate keywords
@@ -141,7 +141,7 @@ Testing
 * Add Tempest tests
 * Create sample policies to test some real scenarios
 
-Documentation Impact
+Documentation impact
 ====================
 
 * Docs for external consumption would need to be updated with explanation on

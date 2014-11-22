@@ -91,7 +91,7 @@ Other end user impact
 None
 
 
-Performance Impact
+Performance impact
 ------------------
 
 This added functionality may or may not come with a performance cost.
@@ -104,11 +104,11 @@ MaterializedViewTheory will incur no performance cost because it already
 evaluates all tables at every insert/delete.
 
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 None outside of Congress.  Developers can ignore the new interface
@@ -123,7 +123,7 @@ Assignee(s)
 Primary assignee:
   Tim Hinrichs
 
-Work Items
+Work items
 ----------
 
 - Add event-handler registry to theory base class
@@ -143,7 +143,7 @@ Unit tests: register event handler, insert/delete policy data, check if
 event handler actually executed
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 None
