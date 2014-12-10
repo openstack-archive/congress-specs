@@ -48,13 +48,13 @@ Policy
 None
 
 
-Policy Actions
+Policy actions
 --------------
 
 None
 
 
-Data Sources
+Data sources
 ------------
 
 None
@@ -85,17 +85,17 @@ Other end user impact
 
 None
 
-Performance Impact
+Performance impact
 ------------------
 
 None
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 This change provides developers more versatility when creating datasource
@@ -116,7 +116,7 @@ Other contributors:
   Conner Ferguson
 
 
-Work Items
+Work items
 ----------
 
 Add extract-fn as a parameter to HDICT, VDICT, and LIST translators.
@@ -136,7 +136,7 @@ extract-fn translator then this data will be checked to ensure that it is
 being displayed in the expected manor.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 Minor additions to the datasource driver based class documentation to inform

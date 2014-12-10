@@ -25,9 +25,9 @@ Proposed change
 ===============
 
 This specification will be used to track a number of successive, minor changes
-to Congress with the goal of fully supporting Python 3. Each commit will address
-one change to Congress to ensure compatibility with Python 3 while continuing
-support for Python 2.
+to Congress with the goal of fully supporting Python 3. Each commit will
+address one change to Congress to ensure compatibility with Python 3 while
+continuing support for Python 2.
 
 
 Alternatives
@@ -42,13 +42,13 @@ Policy
 None.
 
 
-Policy Actions
+Policy actions
 --------------
 
 None.
 
 
-Data Sources
+Data sources
 ------------
 
 None.
@@ -81,17 +81,17 @@ Other end user impact
 
 None.
 
-Performance Impact
+Performance impact
 ------------------
 
 None.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None.
 
-Developer Impact
+Developer impact
 ----------------
 
 Once fully implemented commits must pass tox tests against py34 and should be
@@ -110,14 +110,14 @@ Primary assignee:
 Other contributors:
   None
 
-Work Items
+Work items
 ----------
 
 - Determine what sections of code need to be modified to ensure Python 3
   compatibility. This can be done by generating list of fixers which run
   when '2to3' is used to transform code to Python 3.
-- Run code through 2to3 for each fixer (see previous bullet), also ensuring that
-  changes to the code do not break compatibility with Python 2.
+- Run code through 2to3 for each fixer (see previous bullet), also ensuring
+  that changes to the code do not break compatibility with Python 2.
 - Confirm that changes are gradually improving tox -e py34 test outcomes.
 
 
@@ -136,7 +136,7 @@ succeeding. Current unit tests (and the code being tested) may have to be
 modified during the course of the implementation of this specification.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 None.

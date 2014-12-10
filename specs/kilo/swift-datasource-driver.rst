@@ -37,12 +37,12 @@ Policy
 
 This will use the congress language. swift:containers(X) etc.
 
-Policy Actions
+Policy actions
 --------------
 
 Just monitoring right now.
 
-Data Sources
+Data sources
 ------------
 
 Swift
@@ -72,17 +72,17 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 N/A
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -96,7 +96,7 @@ Assignee(s)
 Srinivasa Rao Ragolu
 sragolu@mvista.com
 
-Work Items
+Work items
 ----------
 
 - Implement swift driver with essential tables
@@ -114,7 +114,7 @@ Testing
 - Will need to add unit test code
 - Will add tempest tests.
 
-Documentation Impact
+Documentation impact
 ====================
 
 N/A

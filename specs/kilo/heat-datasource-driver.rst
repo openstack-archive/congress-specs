@@ -59,12 +59,12 @@ Policy
 
 N/A
 
-Policy Actions
+Policy actions
 --------------
 
 N/A
 
-Data Sources
+Data sources
 ------------
 
 Openstack Heat
@@ -95,18 +95,18 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 It is possible that the API calls will be expensive.  We will need to measure
 the impact of the API calls on Heat and Congress performance.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -121,7 +121,7 @@ Assignee(s)
 Primary assignee:
    tengqim
 
-Work Items
+Work items
 ----------
 
  * Write unit test
@@ -145,7 +145,7 @@ still dependent on the Heat API, so the tempest test is particularly important
 as an integration test.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 N/A
