@@ -32,13 +32,69 @@ compute updates to tables and run the registered event handlers.
 Proposed change
 ===============
 
-To each Theory class or subclass in runtime.py we will add an
-interface for event-handler registration, e.g.
+We will create a trigger-registry interface that enables a programmer
+to dictate a function to run each time the contents of a given
+table changes.
 
-Theory.register_handler(tablename, function)
 
-To each Theory we will add code that implements all the triggers
-that have been registered.
+Programmer's perspective
+------------------------
+The functions that a programmer will register have a signature like
+the one that follows.
+
+def respond_to_trigger(oldtable, newtable, delta)
+
+The programmer will register this handler on a particular theory
+and a particular table.  In this example, we register the
+function above so it runs each time the table "p" changes in
+the policy/theory "th".
+
+# instance of congress/policy/runtime.py:Theory
+th = engine.policy("alice_policy")
+# register 'respond_to_trigger' for table 'p' on that policy
+th.register_trigger("p", respond_to_trigger)
+
+From the programmer's point of view, each time the contents of
+table "p" changes in the theory named "alice_policy", the function
+respond_to_trigger is run and given as arguments the original
+table, the new table, and the difference in the two.
+
+
+Implementation
+---------------
+The function 'register_trigger' will be implemented in the
+congress/policy/runtime.py:Theory class.  We will also have
+an 'unregister_trigger' function call.  The Theory class will
+be augmented to contain a hash table 'self.triggers' that
+maps each table name to the set of functions that have
+been registered for that table.  'register_trigger' and
+'unregister_trigger' change the contents of that hash table.
+
+Then changes will be made to NonrecursiveRuleTheory,
+MaterializedViewTheory, and Database to implement the trigger:
+each time update() is called, the theory will
+(i) compute the contents of each table that has a trigger registered,
+(ii) apply the usual update() logic,
+(iii) compute the contents of each table with a registered trigger (again),
+(iv) compute the deltas on each of the tables with triggers
+(v) for each table t with non-empty delta, invoke all of the triggers
+registered for t giving the arguments (i), (iii), (iv)
+
+Obviously triggers can be expensive because they require 2 queries
+each time data is changed.  Ideally, we would utilize policy analysis
+to only query those tables when the data being update might possibly
+change the contents of those tables.
+
+For example,  suppose we registered a trigger for table p, and we
+had 2 rules:
+
+p(x) :- q(x)
+r(x) :- t(x)
+
+Updates to table t could never change the contents of p, but updates
+to table q COULD change the contents of p.  Hence, the trigger
+implementation would run queries on p only when the incoming update
+changes q.
 
 
 Alternatives
