@@ -34,18 +34,18 @@ Proposed change
 This driver will be similar to other existing drivers like neutron_driver.py
 and nova_driver.py.  The Heat driver will read data from the following Heat
 API calls and convert the responses to Congress tables:
- * list stacks
- * show stack detail
- * list snapshots
- * list resources
- * show resource data
- * show resource metadata
- * list resource types
- * show configuration details
- * list stack events
- * show event details
- * show software_configs
- * show software_deployments
+* list stacks
+* show stack detail
+* list snapshots
+* list resources
+* show resource data
+* show resource metadata
+* list resource types
+* show configuration details
+* list stack events
+* show event details
+* show software_configs
+* show software_deployments
 
 Alternatives
 ------------

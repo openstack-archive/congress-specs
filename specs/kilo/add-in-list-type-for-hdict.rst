@@ -18,12 +18,22 @@ Problem description
 ===================
 
 Several datasources return data in the format of a dict(list(dict()) (for
-example neutron ports for fixed_ips):
+example neutron ports for fixed_ips)::
 
-{"ports": [{"status": "DOWN",
-            "id": "11ce1474-e395-4bda-b48c-820f0d542acd",
-            "fixed_ips": [{"subnet_id": "e56370ba-d255-486c-9907-ad4c6aed0241",
-                           "ip_address": "10.2.0.2"}]}}
+    {
+        "ports": [
+            {
+                "status": "DOWN",
+                "id": "11ce1474-e395-4bda-b48c-820f0d542acd",
+                "fixed_ips": [
+                    {
+                        "subnet_id": "e56370ba-d255-486c-9907-ad4c6aed0241",
+                        "ip_address": "10.2.0.2"
+                    }
+                ]
+            }
+        ]
+    }
 
 congress currently does not have an easy way to deal with data in this format
 unless an extra table is created. This blueprint is to provide an
@@ -90,17 +100,17 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 N/A
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -114,7 +124,7 @@ Assignee(s)
 Primary assignee:
   arosen
 
-Work Items
+Work items
 ----------
 
 Implement this feature.
@@ -131,7 +141,7 @@ Testing
 
 Unit tests.
 
-Documentation Impact
+Documentation impact
 ====================
 
 Will document.

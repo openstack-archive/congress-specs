@@ -12,6 +12,7 @@ https://blueprints.launchpad.net/congress/+spec/parent-key-improvements
 
 There are two current shortcomings of the parent_key implementation in
 congress.
+
 * It's unable to be accessed from a subtable. This is needed in the neutron
   refactoring working to handle how neutron structures the response for
   routers.

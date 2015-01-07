@@ -84,20 +84,20 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 Implementing this driver will add another data source for congress to parse
 data from, and since this driver pulls data from a non-openstack source this
 will generate additional traffic on the network.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 To use this driver a deployer will need to configure this driver in
 datasource.config.
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -113,7 +113,7 @@ Primary assignee:
   Conner Ferguson
 
 
-Work Items
+Work items
 ----------
 
 N/A
@@ -131,7 +131,7 @@ Testing
 TBD
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 Documentation can already be found at
