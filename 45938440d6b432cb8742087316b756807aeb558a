@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: Tim Hinrichs <timothy.l.hinrichs@gmail.com>
+Workflow+1: Tim Hinrichs <timothy.l.hinrichs@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 05 Feb 2015 19:39:26 +0000
+Reviewed-on: https://review.openstack.org/142232
+Project: stackforge/congress-specs
+Branch: refs/heads/master
