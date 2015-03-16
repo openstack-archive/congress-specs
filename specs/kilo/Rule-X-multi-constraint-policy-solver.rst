@@ -119,7 +119,7 @@ lessEqual  ::=    <symb1>  “<=”  < value2>
 
 and      ::=    <epxr1>   “&&”  <expr2>
 
-or       ::=    <epxr1>    “||”   <expr2>
+or        ::=    <epxr1>    “||”   <expr2>
 
 action    ::=   “action”   “{” <action>  “;”  “}”
 
