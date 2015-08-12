@@ -31,7 +31,8 @@ Proposed change
 This change will create a new (mix-in) class called ExecutionDriver that has
 one main function: execute(name, positional-args, named-args).  That interface
 takes the name of the action, a list of its positional arguments, and a
-dictionary of its named arguments and executes that action on the cloud service.
+dictionary of its named arguments and executes that action on the cloud
+service.
 
 This change will also overload the functionality of
 
@@ -111,31 +112,33 @@ Question: Should we rename the "data-sources" in the API to "cloud-services"?
 
 If so, then we'd have...
 
-Execute an action on a specified service.
-POST v1/cloud-services/nova?action=execute -d {'name': 'disconnectNetwork',
-                                               'args': ['vm123', 'net456'],
-                                               'options': {}}
+Execute an action on a specified service. ::
+
+ POST v1/cloud-services/nova?action=execute -d {'name': 'disconnectNetwork',
+                                                'args': ['vm123', 'net456'],
+                                                'options': {}}
 
 
 
-Execute an action as if the given policy dictated it should be executed.
-POST v1/policies/alice?action=execute -d {'name': 'nova:disconnectNetwork',
-                                          'args': ['vm123', 'net456'],
-                                          'options': {}}
+Execute an action as if the given policy dictated it should be executed. ::
+
+ POST v1/policies/alice?action=execute -d {'name': 'nova:disconnectNetwork',
+                                           'args': ['vm123', 'net456'],
+                                           'options': {}}
 
 
 These API calls will have an empty response (HTTP code 204 perhaps) or an
 appropriate error response if there was an error raised *before* the API call
-was actually made.  These API calls will return before the call we are executing
-returns.
+was actually made.  These API calls will return before the call we are
+executing returns.
 
 
 
 Security impact
 ---------------
 
-This change gives anyone with the ability to write policy the ability to execute
-API calls using the same rights Congress has been granted.  Since
+This change gives anyone with the ability to write policy the ability to
+execute API calls using the same rights Congress has been granted.  Since
 we typically run Congress with administrative rights, we need to secure
 Congress authentication properly.  But that is already accomplished because
 we use the standard Keystone authentication system.
@@ -153,7 +156,7 @@ python-congressclient would need a new endpoint if we expose the execute()
 functionality via the API.
 
 
-Performance Impact
+Performance impact
 ------------------
 
 Because the DatasourceDriver and ExecutionDriver will most often be implemented
@@ -164,12 +167,12 @@ run in a single thread, i.e. either one runs or the other runs.  This is
 actually beneficial because we would not want the driver to be pulling new
 data at the same time it executes a change in that data.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 None
@@ -186,19 +189,19 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 - Rename folder congress/datasources to congress/cloudservices and change
-etc/congress/datasources.conf.sample appropriately.  There may be other places
-that reference 'datasources' explictly.
+  etc/congress/datasources.conf.sample appropriately.  There may be other
+  places that reference 'datasources' explicitly.
 
 - Add congress/cloudservices/execution_driver.py to include the mixin class
-ExecutionDriver
+  ExecutionDriver
 
 - Implement policy/dseruntime.py:DseRuntime.execute() to send a unicast
-message to the appropriate service or raise an error if that service does
-not exist on the bus.
+  message to the appropriate service or raise an error if that service does
+  not exist on the bus.
 
 - Implement the ExecutionDriver for an existing service, e.g. Nova.
 
@@ -213,13 +216,14 @@ Testing
 =======
 
 - Unit tests that ensure a call to DseRuntime.execute() invokes the appropriate
-ExecutionDriver.execute().
+  ExecutionDriver.execute().
 
-- Tempest tests that invoke execute() and ensure the proper change actually happens.
+- Tempest tests that invoke execute() and ensure the proper change actually
+  happens.
 
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 Need to add description of actions and action format to docs, along with

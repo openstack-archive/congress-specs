@@ -1,5 +1,4 @@
 ..
-
  This work is licensed under a Creative Commons Attribution 3.0 Unported
  License.
 
@@ -12,14 +11,16 @@ Congress OpenStack Horizon : Data Source Status Table
 
 https://blueprints.launchpad.net/congress/+spec/horizon-datasource-status-table
 
-This blue print describes integration of datasources status with Horizon dashboard.
-Admin will be able to see detailed status of each datasource.
+This blue print describes integration of datasources status with Horizon
+dashboard. Admin will be able to see detailed status of each datasource.
+
 Problem description
 ===================
 
 A detailed description of the problem:
 
-* In the existing horizon implementation congress data source status is not shown
+* In the existing horizon implementation congress data source status is not
+  shown
 
 * This poses problem to admins who want to see the status of data sources
 
@@ -38,7 +39,7 @@ none
 
 
 Screens
-------
+-------
 
 none
 
@@ -88,8 +89,8 @@ Performance impact
 
 none
 
-Other deployer impacts
-----------------------
+Other deployer impact
+---------------------
 
 none
 

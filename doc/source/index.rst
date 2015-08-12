@@ -4,13 +4,21 @@
 Congress Project Specifications
 ===============================
 
-Contents:
+Liberty approved specs:
 
 .. toctree::
    :glob:
    :maxdepth: 1
 
-   specs/*
+   specs/liberty/*
+
+Kilo approved specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/kilo/*
 
 Juno approved specs:
 
@@ -19,6 +27,14 @@ Juno approved specs:
    :maxdepth: 1
 
    specs/juno/*
+
+Spec Template:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/*
 
 ==================
 Indices and tables

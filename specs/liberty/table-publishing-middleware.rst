@@ -32,10 +32,10 @@ to other projects, but that mechanism is underutilized today.
 Proposed change
 ===============
 
-Solving this problem means making it even easier for other projects to send their
-data to Congress than oslo.messaging does.  This change will include middleware,
-perhaps made available via oslo, that publishes all changes to the underlying
-database tables on the bus.  Moreover, it will
+Solving this problem means making it even easier for other projects to send
+their data to Congress than oslo.messaging does.  This change will include
+middleware, perhaps made available via oslo, that publishes all changes to the
+underlying database tables on the bus.  Moreover, it will
 send not the entire table but rather the delta on the table that occurred.
 It will be tightly integrated into existing oslo.db so that existing projects
 need make no code changes; they need only include and configure the code.
@@ -104,7 +104,7 @@ Other end user impact
 
 None
 
-Performance Impact
+Performance impact
 ------------------
 
 There will be minimal performance impact on the projects that utilize this
@@ -114,13 +114,13 @@ are published on the bus, the project owner can tune any
 possible performance impact.
 
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 When configuring the middleware, we propose one key configuration option:
 which tables should be published on the bus.
 
-Developer Impact
+Developer impact
 ----------------
 None
 
@@ -136,7 +136,7 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 - Write basic middleware functionality
@@ -161,7 +161,7 @@ Testing
   o  Verify that changes to tables configured NOT to be published do not
   get published
 
-Documentation Impact
+Documentation impact
 ====================
 
 Need documentation in oslo for the basic middleware.

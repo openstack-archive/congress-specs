@@ -16,8 +16,8 @@ broadcast mechanism is used for this purpose.  While effective, these
 broadcasts are inefficient, and complicate debugging.
 
 Instead of using the exiting broadcast-based discovery mechanism, nodes on
-the DSE should publish events on a well-known "collections registry,” that every
-node subscribes to.
+the DSE should publish events on a well-known "collections registry,”
+that every node subscribes to.
 
 
 Problem description
@@ -38,12 +38,12 @@ Proposed change
   registry.
 * Each deepsix instance will maintain a list of it’s data_indexes that it has
   a desired subscription for. The instance will do a lookup in it’s local
-  copy of the collection registry to find associated endpoints to send 
+  copy of the collection registry to find associated endpoints to send
   subscription requests to.  As changes occur to the collection registry,
   each instance will re-evaluate it’s own subscriptions against these
   updates.
 * There is a collection registry per instance of the DSE. In a hierarchical
-  DSE, there could be multiple registries.  
+  DSE, there could be multiple registries.
 * The periodic broadcast of data_index information can be removed after
   these changes.
 
@@ -104,7 +104,7 @@ Other end user impact
 N/A
 
 
-Performance Impact
+Performance impact
 ------------------
 
 At runtime, this change will reduce the time it takes to distribute
@@ -113,13 +113,13 @@ information about new nodes in the system.  It will also reduce the overall
 the reduction in chatter will greatly simplify debugging the message bus.
 
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -138,7 +138,7 @@ Other contributors:
   None
 
 
-Work Items
+Work items
 ----------
 
 TBD
@@ -156,7 +156,7 @@ Testing
 The existing testing framework is sufficient to test to change.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 N/A

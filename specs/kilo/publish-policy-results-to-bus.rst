@@ -27,11 +27,11 @@ But there are several use cases when other entities on the DSE message bus
 defined within policy.
 
 - Building proof of concepts where an external service is informed of
-policy violations and reacts accordingly, implemented for the sake of
-convenience as another entity on the DSE message bus.
+  policy violations and reacts accordingly, implemented for the sake of
+  convenience as another entity on the DSE message bus.
 
 - Interoperable policy engines that publish their monitoring results
-on the bus for other policy engines to consume.
+  on the bus for other policy engines to consume.
 
 
 Proposed change
@@ -109,7 +109,7 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 Performance will be impacted, but little moreso than because of the triggers.
@@ -118,12 +118,12 @@ be published on the message bus.  Publishing is fast (especially compared
 to computing the contents of tables and then their deltas).
 
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -140,18 +140,18 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 - Create subclass of DeepSix that includes delta publication functionality
-and have DatasourceDriver and DseRuntime inherit from that subclass
-instead of DeepSix
+  and have DatasourceDriver and DseRuntime inherit from that subclass
+  instead of DeepSix
 
 - Alter DseRuntime so that every subscribe message sets up the appropriate
-trigger.
+  trigger.
 
 - Alter DseRuntime so that every unsubscribe message removes the appropriate
-trigger.
+  trigger.
 
 
 Dependencies
@@ -167,7 +167,7 @@ changes to those tables, and verify that the appropriate deltas
 are sent on the bus are adequate.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 None required--we're just making a policy engine implement the same interface

@@ -49,6 +49,7 @@ Data-sources would support:
 * status: status
 
 Policy-engines would support:
+
 * schema: available tables (e.g. classification:connected_to_internet)
 * actions: available actions (e.g. scripts built into a policy-engine for
   carrying out some task)
@@ -124,8 +125,8 @@ And maybe we can have arbitrary aliases for services as well, so that we can
 upgrade any service without changing policy.
 
 One worry with providing the /v1/policies, etc. endpoints is that it may
-seem to mask Congress's overall status, policies, actions, and tables.  That
-is, people might expect those endpoints to aggregate all the potential policies,
+seem to mask Congress's overall status, policies, actions, and tables. That is,
+people might expect those endpoints to aggregate all the potential policies,
 actions, tables, and statuses.  But if such functionality ever becomes
 necessary, we can attach those endpoints to /v1/services, giving us the
 following end points.
@@ -135,7 +136,8 @@ following end points.
 /services/tables
 /services/status
 
-Here is an example of the entry points if we had Nova, GBP, and our policy engine.  The name of the service is whatever name DSE expects.
+Here is an example of the entry points if we had Nova, GBP, and our policy
+engine.  The name of the service is whatever name DSE expects.
 
 /policies
 /actions
@@ -171,7 +173,10 @@ we already need adapters that translate Datalog into the native language of
 each policy engine, so here we expose that functionality directly to the user
 as well.
 
+Alternatives
+------------
 
+N/A
 
 
 Tradeoffs
@@ -182,6 +187,7 @@ Pros for the type-based approach:
 * Simple extension of the current API
 
 Cons for the type-based approach:
+
 * Awkward that data-sources and policy-engines implement almost exactly the
   same interface and have separate namespaces, but are represented as
   distinct classes in the API.
@@ -191,10 +197,12 @@ Cons for the type-based approach:
   and interfaces in the underlying implementation.
 
 Pros for the the service-based approach:
+
 * All services running on the DSE are accessed identically from the API. This
   is a more natural reflection of the reality of the nature of those services.
 
 Cons for the service-based approach:
+
 * Bigger change
 * May be more difficult for users to understand initially.
 * Eventually the policy-engine class will include functionality that the
@@ -294,10 +302,11 @@ Once we decide on the approach, we will figure out the necessary work items.
 But here's a rough cut.
 
 - type-based approach: add routes, create congress/api/engine_model.py, modify
-  congress/api/*_model to enable tables/actions/policies/etc. for engines.
+  congress/api/\*_model to enable tables/actions/policies/etc. for engines.
 - service-based approach: add routes, create congress/api/service_model.py,
   (including an API to list different types of objects), modify the
-  congress/api/*_model to eliminate distinction between datasources and policies
+  congress/api/\*_model to eliminate distinction between datasources and
+  policies
 
 
 

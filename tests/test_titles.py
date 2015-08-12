@@ -68,6 +68,9 @@ class TestTitles(testtools.TestCase):
         for i, line in enumerate(raw.split("\n")):
             if "http://" in line or "https://" in line:
                 continue
+            # skip long table
+            elif "-+-" in line or " | " in line:
+                continue
             self.assertTrue(
                 len(line) < 80,
                 msg="%s:%d: Line limited to a maximum of 79 characters." %

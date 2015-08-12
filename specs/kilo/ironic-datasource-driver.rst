@@ -4,17 +4,17 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-===============================
+==================================
 Create an ironic Datasource Driver
-===============================
+==================================
 
 Include the URL of your launchpad blueprint:
 
 https://blueprints.launchpad.net/congress/+spec/ironic-datasource-driver
 
-This ironic driver will allow Congress to interact with the Openstack ironic API
-for orchestration. The first version will provide data from ironic's read API
-calls until Congress does have infrastructure to handle writing to drivers.
+This ironic driver will allow Congress to interact with the Openstack ironic
+API for orchestration. The first version will provide data from ironic's read
+API calls until Congress does have infrastructure to handle writing to drivers.
 Subsequent versions may be able to send requests and write to the ironic API.
 
 
@@ -141,8 +141,8 @@ Testing
 
 This work must include a unit test and a tempest test.  The driver translator
 infrastructure makes most of the translation code robust, but the driver is
-still dependent on the ironic API, so the tempest test is particularly important
-as an integration test.
+still dependent on the ironic API, so the tempest test is particularly
+important as an integration test.
 
 
 Documentation impact

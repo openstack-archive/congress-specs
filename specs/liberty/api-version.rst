@@ -81,7 +81,7 @@ REST API impact
 
   * JSON schema definition for the response data if any:
 
-    ::
+  ::
 
     {
       "type": "object",
@@ -126,6 +126,7 @@ REST API impact
       "required": ["versions"]
     }
 
+
 * Example use case:
 
   ::
@@ -163,7 +164,7 @@ The related works in python-congressclient will also be added.
 
 After this modification, user could get the API version details, like this:
 
-  ::
+::
 
   openstack congress version list
 

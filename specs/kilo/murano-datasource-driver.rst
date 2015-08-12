@@ -33,14 +33,16 @@ data tables.
 
         * *object_id* - uuid of the object as used in Murano
         * *owner_id* - uuid of the owner object as used in Murano
-        * *type* - string with full type identification as used in Murano (e.g., io.murano.Environment,...)
+        * *type* - string with full type identification as used in Murano
+          (e.g., io.murano.Environment,...)
 
    * *murano:parent-types(id, parent_type)*
 
       This table holds parent types of *obj_id* object.
 
         * *id* - uuid of the object as used in Murano
-        * *parent_type* - string with full type identification of the parent object
+        * *parent_type* - string with full type identification of the parent
+          object
 
       Note that Murano supports multiple inheritance, so there can be several
       parent types for one object

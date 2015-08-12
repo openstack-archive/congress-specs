@@ -134,17 +134,17 @@ Other end user impact
 
 None
 
-Performance Impact
+Performance impact
 ------------------
 
 None
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 None
@@ -162,7 +162,7 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 - Modify grammar as described above
@@ -183,7 +183,7 @@ Unit tests are sufficient.  Ensure that the new syntactic constructs
 can be used anywhere and that the runtime produces the proper results
 when the new syntactic constructs are in place.
 
-Documentation Impact
+Documentation impact
 ====================
 
 End-user documentation is not necessary for this change.  But documentation

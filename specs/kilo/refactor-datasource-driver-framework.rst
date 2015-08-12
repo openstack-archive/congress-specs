@@ -116,17 +116,17 @@ Other end user impact
 
 N/A
 
-Performance Impact
+Performance impact
 ------------------
 
 N/A
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -140,7 +140,7 @@ Assignee(s)
 Primary assignee:
     arosen
 
-Work Items
+Work items
 ----------
 
 Push code to do this.
@@ -155,7 +155,7 @@ Testing
 
 Unit tests and tempest tests will be present to confirm this works as desired.
 
-Documentation Impact
+Documentation impact
 ====================
 
 Will update docs for how this now works.

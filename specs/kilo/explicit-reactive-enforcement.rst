@@ -10,9 +10,9 @@ Explicit reactive enforcement
 
 https://blueprints.launchpad.net/congress/+spec/explicit-reactive-enforcement
 
-Enable policy writers to describe conditions under which Congress should execute
-specific actions, e.g. when a network is connected to a VM that contains a
-virus, disconnect it from the internet.
+Enable policy writers to describe conditions under which Congress should
+execute specific actions, e.g. when a network is connected to a VM that
+contains a virus, disconnect it from the internet.
 
 Problem description
 ===================
@@ -30,12 +30,11 @@ the one below to encode instructions for how Congress ought to
 react to changes in the cloud.  It enables the policy writer to dictate
 that Congress must execute certain actions under certain conditions.
 
-// disconnect a VM from the network whenever it is infected by a virus
-execute[disconnectNetwork(vm, network=net)] :-
-  antivirus:infected(vm),
-  nova:network(vm, net)
+// disconnect a VM from the network whenever it is infected by a virus::
 
-
+ execute[disconnectNetwork(vm, network=net)] :-
+   antivirus:infected(vm),
+   nova:network(vm, net)
 
 Alternatives
 ------------
@@ -99,18 +98,18 @@ Other end user impact
 
 None
 
-Performance Impact
+Performance impact
 ------------------
 
 None for this spec; other, dependent specs have performance impacts.
 
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 None.
 
-Developer Impact
+Developer impact
 ----------------
 
 None.
@@ -128,14 +127,14 @@ Primary assignee:
 Other contributors:
   <launchpad-id or None>
 
-Work Items
+Work items
 ----------
 
 - Modify trigger framework to operate on modal operators directly, e.g. so
-that we can register a trigger whenever execute[x] changes.
+  that we can register a trigger whenever execute[x] changes.
 
 - Set up a trigger on execute[x].  When that trigger fires, it invokes
-the action on the appropriate ExecutionDriver.
+  the action on the appropriate ExecutionDriver.
 
 
 Dependencies
@@ -154,7 +153,7 @@ This change will require unit tests for the enhanced trigger framework.
 It should include tempest tests to test end-to-end functionality.
 
 
-Documentation Impact
+Documentation impact
 ====================
 
 This will require a new documentation section for reactive enforcement.

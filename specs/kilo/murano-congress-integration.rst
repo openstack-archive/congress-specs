@@ -82,17 +82,17 @@ Other end user impact
 N/A
 
 
-Performance Impact
+Performance impact
 ------------------
 
 N/A
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 
 N/A
 
-Developer Impact
+Developer impact
 ----------------
 
 N/A
@@ -106,7 +106,7 @@ Assignee(s)
 Primary assignee:
     Murano Team
 
-Work Items
+Work items
 ----------
 
 Data source driver
@@ -122,7 +122,7 @@ Testing
 
 Tempest and unit tests will be added.
 
-Documentation Impact
+Documentation impact
 ====================
 
 N/A

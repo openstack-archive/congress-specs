@@ -94,17 +94,17 @@ Other end user impact
 
 None
 
-Performance Impact
+Performance impact
 ------------------
 
 Preliminary testing shows a 10x reduction in CPU use and a 3x reduction in
 memory use in initialize_table() for 7M facts where the payload is 700MB.
 
-Other Deployer Impacts
-----------------------
+Other deployer impact
+---------------------
 None
 
-Developer Impact
+Developer impact
 ----------------
 
 A Theory object will internally contain Rules and Facts.  The caller an insert
@@ -120,7 +120,7 @@ Assignee(s)
 Primary assignee:
   ayip
 
-Work Items
+Work items
 ----------
 
 * Implement FactSet
@@ -140,7 +140,7 @@ Testing
 
 Add a unit test for FactSet
 
-Documentation Impact
+Documentation impact
 ====================
 
 None
