@@ -34,9 +34,10 @@ Proposed change
 
 How to change to distributed version
 
-It replace calling harness.py:create() in service.py:congress_app_factory() with
-a new API instance creating method which has instantiation steps for API model in
-harness.py:create(). And it's only to make the dict with new instances.
+It replace calling harness.py:create() in service.py:congress_app_factory()
+with a new API instance creating method which has instantiation steps for
+API model in harness.py:create(). And it's only to make the dict with new
+instances.
 
 Alternatives
 ------------
