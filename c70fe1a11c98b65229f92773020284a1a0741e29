@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Tim Hinrichs <timothy.l.hinrichs@gmail.com>
+Workflow+1: Tim Hinrichs <timothy.l.hinrichs@gmail.com>
+Code-Review+1: Masahito Muroi <muroi.masahito@lab.ntt.co.jp>
+Code-Review+1: Anusha Ramineni <anusha.ramineni@nectechnologies.in>
+Code-Review+1: Joon-Myung Kang <joon-myung.kang@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 24 Nov 2015 00:10:02 +0000
+Reviewed-on: https://review.openstack.org/246250
+Project: openstack/congress-specs
+Branch: refs/heads/master
