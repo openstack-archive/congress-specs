@@ -26,7 +26,7 @@ already existed in the world. The systems have an ability to notify a change
 in cloud services just after a change occurs. And then these monitoring systems
 can detect many kind of changes in cloud services that Congress can't do.
 
-Congress should retrive the notification as a DataSource since it helps
+Congress should retrieve the notification as a DataSource since it helps
 Congress to calculate a policy violation faster than now and also enables
 us to define varied policies and rules.
 
