@@ -4,6 +4,14 @@
 Congress Project Specifications
 ===============================
 
+Pike approved specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/pike/*
+
 Newton approved specs:
 
 .. toctree::
