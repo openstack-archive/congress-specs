@@ -1,0 +1,9 @@
+Code-Review+1: Masahito Muroi <muroi.masahito@lab.ntt.co.jp>
+Code-Review+2: Eric Kao <ekcs.openstack@gmail.com>
+Workflow+1: Eric Kao <ekcs.openstack@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 25 May 2017 02:10:56 +0000
+Reviewed-on: https://review.openstack.org/457880
+Project: openstack/congress-specs
+Branch: refs/heads/master
