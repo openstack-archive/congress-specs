@@ -220,7 +220,6 @@ One new database tables are needed:
     sa.Column(sa.String(255), nullable=False, unique=True, primary_key=True)``
   * ``abbreviation = sa.Column(sa.String(5), nullable=False)``
   * ``description = sa.Column(sa.Text(), nullable=False)``
-  * ``owner = sa.Column(sa.Text(), nullable=False)``
   * ``kind = sa.Column(sa.Text(), nullable=False)``
   * ``rules = sa.Column(sa.Text(), nullable=False)``
 
@@ -294,10 +293,6 @@ Policy library methods
           properties:
             name:
               title: Policy unique name
-              type: string
-              required: true
-            owner_id:
-              title: Policy owner
               type: string
               required: true
             description:
@@ -440,10 +435,6 @@ Policy metadata schema without UUID
         title: Policy unique name
         type: string
         required: true
-      owner_id:
-        title: Policy owner
-        type: string
-        required: true
       description:
         title: Policy description
         type: string
@@ -481,10 +472,6 @@ Policy metadata schema with UUID
         title: Policy unique name
         type: string
         required: true
-      owner_id:
-        title: Policy owner
-        type: string
-        required: true
       description:
         title: Policy description
         type: string
@@ -515,10 +502,6 @@ Policy full schema
     properties:
       name:
         title: Policy unique name
-        type: string
-        required: true
-      owner_id:
-        title: Policy owner
         type: string
         required: true
       description:
