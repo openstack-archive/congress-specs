@@ -536,7 +536,7 @@ Policy full schema
       rules:
         title: collection of rules
         type: array
-        required: false
+        required: true
         items:
           type: object
           properties:
