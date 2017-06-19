@@ -475,11 +475,11 @@ Policy metadata schema with UUID
       description:
         title: Policy description
         type: string
-        required: true
+        required: false
       kind:
         title: Policy kind
         type: string
-        required: true
+        required: false
       abbreviation:
         title: Policy name abbreviation
         type: string
