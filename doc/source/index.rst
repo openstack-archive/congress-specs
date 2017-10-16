@@ -4,6 +4,14 @@
 Congress Project Specifications
 ===============================
 
+Queens approved specs:
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/queens/*
+
 Pike approved specs:
 
 .. toctree::
