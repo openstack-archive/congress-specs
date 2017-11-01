@@ -1,0 +1,10 @@
+Code-Review+1: Tim Hinrichs <timothy.l.hinrichs@gmail.com>
+Code-Review+1: Masahito Muroi <muroi.masahito@lab.ntt.co.jp>
+Code-Review+2: Eric Kao <ekcs.openstack@gmail.com>
+Workflow+1: Eric Kao <ekcs.openstack@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 01 Nov 2017 20:26:15 +0000
+Reviewed-on: https://review.openstack.org/512236
+Project: openstack/congress-specs
+Branch: refs/heads/master
