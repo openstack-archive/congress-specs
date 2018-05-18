@@ -46,8 +46,8 @@ interpreter, and/or a compiler. See [3]_ for more information on the benefits
 of formally defining a grammar.
 
 Change #1:  Table Referencing
-[1]_ says: “Conceptually, Datalog describes policy in terms of a collection
-of tables.” Tables are a simple way of conveying information, and lend
+[1]_ says: "Conceptually, Datalog describes policy in terms of a collection
+of tables." Tables are a simple way of conveying information, and lend
 themselves to querying, editing, and reporting. Policy rules can be thought of
 as how input from one or more tables can be transformed into output in one or
 more tables. Tables are full-fledged objects, so this enables us to not only
@@ -87,7 +87,7 @@ queries are NOT safe: ::
    foo(X, Y) :- rel1(X)
 
 Change #6:  Grammatical Improvements
-Datalog is powerful, but somewhat hard to use. A set of “syntactical sugar”
+Datalog is powerful, but somewhat hard to use. A set of "syntactical sugar"
 will be defined to make Datalog easier to use, especially for the native Python
 developer.
 
@@ -113,7 +113,7 @@ there are other types of policy rules:
 •	Goal policies
 •	Utility functions
 •	Promises
-[6]_ covers the first two, and [7]_ is the latest of Mark’s publications on
+[6]_ covers the first two, and [7]_ is the latest of Mark's publications on
 promise theory. All three of the above are different in form and function than
 ECA and CA policy rules. Datalog-ng can model the intent of most of these forms
 of policy rules, which is what is needed in Congress – the ability to
@@ -143,8 +143,8 @@ flow of control to perform the task. First-order logic is a formal system of
 logic in which each statement consists of a subject and a predicate. A
 predicate can only refer to a single subject. Sentences are combined and
 manipulated using the same rules as those used in Boolean algebra. Two
-quantifiers exist: “for all” and “for some” (higher-order logics have
-additional quantifiers, such as “for every property of an object”).
+quantifiers exist: "for all" and "for some" (higher-order logics have
+additional quantifiers, such as "for every property of an object").
 
 Datalog is thus more powerful than simple propositional logic, but not as
 powerful as first-order logic. However, it provides a combination of power and
@@ -185,7 +185,7 @@ N/A
 Security impact
 ---------------
 
-Policy can contain the proverbial “keys to the kingdom”. So, if someone
+Policy can contain the proverbial "keys to the kingdom". So, if someone
 hacks their way into the system and can start issuing policies, game over.
 Therefore, some type of access control should be used with policy-based
 systems.
@@ -297,10 +297,10 @@ developers from themselves. :-)
 Change #6:  Grammatical Improvements
 A set of grammatical improvements will be defined to simplify the use of
 Datalog-ng, and especially to make its syntax friendlier to Python developers.
-Examples include more recognizable comments (e.g., familiar “//” or
-“/*..*/” instead of the native Datalog ‘%’), the ability to use single
+Examples include more recognizable comments (e.g., familiar "//" or
+"/*..*/" instead of the native Datalog '%'), the ability to use single
 and/or double quotes, and English equivalents to some commands
-(e.g., ‘!’ or ‘NOT’ or ‘not’).
+(e.g., '!' or 'NOT' or 'not').
 
 
 Dependencies

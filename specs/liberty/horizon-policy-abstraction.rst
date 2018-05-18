@@ -35,14 +35,14 @@ Policies in Congress can be expressed by BNF as below.
 
 ::
 
- Congress Policy ::= violation-condition, “do” action for violation
+ Congress Policy ::= violation-condition, "do" action for violation
 
 So, policy abstraction is to abstract violation state and corresponding action
 to make the policy more intuitive and easy to use.
 
 By analyzing typical scenarios, violation mainly can be divided into two parts.
-One is the constraint of objects’ attributes, and another is the constraint
-of relationship between several objects’ attributes.
+One is the constraint of objects' attributes, and another is the constraint
+of relationship between several objects' attributes.
 
 All the objects and constraints are not just a simple set of data source
 tables, but they can be divided into some categories according to their
@@ -54,7 +54,7 @@ The violation-condition can be expressed by BNF as below.
 ::
 
  violation-condition ::=object attribute constraint (value | object-attribute)
- object-attribute::=object “.” attribute
+ object-attribute::=object "." attribute
 
 For any violation state, congress will take some actions, such as monitoring,
 proactive and reactive. Of course, there may be more than one action defined to
@@ -67,15 +67,15 @@ The action for violation state can be expressed by BNF as below.
 
 ::
 
- action ::= (“monitoring”| “proactive”| “reactive action”) data
+ action ::= ("monitoring"| "proactive"| "reactive action") data
 
 So policies in Congress can be abstracted into "name", "objects",
 "violation-condition", "action" and "data".
 
-Among these, element “name” defines a marker of a policy, which is used to
+Among these, element "name" defines a marker of a policy, which is used to
 be a unique identification for a policy.
 
-Element “objects” defines all objects which are concerned by this policy.
+Element "objects" defines all objects which are concerned by this policy.
 They are not just simple display of data source tables, but a organized set
 which contains the relationship between different tables and objects,
 such as, "servers", "networks", "hosts", "subnets", etc.
@@ -84,16 +84,16 @@ a attribute of other objects, such as, "servers", "networks".
 Another example is users could choose "servers" and "networks" without caring
 about what put them together ("ports", actually).
 
-Element “violation-condition” defines the state of objects' attributes
+Element "violation-condition" defines the state of objects' attributes
 which can produce violation, and the constraint will include comparison,
 arithmetic and some predefined relationship/functions, such as, "same_group".
 
-Element “action” defines the action needs to take for this policy,
+Element "action" defines the action needs to take for this policy,
 and actions will include "proactive", "monitoring" and some specific actions,
 such as, "create", "pause". All these actions depend on the ability of
 underlying components.
 
-Element “data” defines the information gotten or needed when executing the
+Element "data" defines the information gotten or needed when executing the
 action, for example, when monitoring a servers violation, users can define
 "data" as servers' name to be a return parameters.
 

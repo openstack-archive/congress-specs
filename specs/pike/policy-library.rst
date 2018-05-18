@@ -105,7 +105,7 @@ policy library).
   #. Administrator peruses policies in library
   #. Administrator clicks on an interesting policy, which brings up a textbox
      (or more sophisticated policy editor) to customize.
-  #. Administrator clicks on a ‘Create’ button that creates that policy.
+  #. Administrator clicks on a 'Create' button that creates that policy.
 
 Below are the specific functionalities needed to support these workflows.
 

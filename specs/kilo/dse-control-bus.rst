@@ -16,7 +16,7 @@ broadcast mechanism is used for this purpose.  While effective, these
 broadcasts are inefficient, and complicate debugging.
 
 Instead of using the exiting broadcast-based discovery mechanism, nodes on
-the DSE should publish events on a well-known "collections registry,”
+the DSE should publish events on a well-known "collections registry,"
 that every node subscribes to.
 
 
@@ -32,15 +32,15 @@ Proposed change
 ===============
 
 * All instances of deepSix will subscribe to a well-known table,
-  which we will refer to as the ‘collection registry’.
+  which we will refer to as the 'collection registry'.
 * When the data indexes exposed by a deepSix instance changes (including
   instance startup), the instance will publish an update to the collection
   registry.
-* Each deepsix instance will maintain a list of it’s data_indexes that it has
-  a desired subscription for. The instance will do a lookup in it’s local
+* Each deepsix instance will maintain a list of it's data_indexes that it has
+  a desired subscription for. The instance will do a lookup in it's local
   copy of the collection registry to find associated endpoints to send
   subscription requests to.  As changes occur to the collection registry,
-  each instance will re-evaluate it’s own subscriptions against these
+  each instance will re-evaluate it's own subscriptions against these
   updates.
 * There is a collection registry per instance of the DSE. In a hierarchical
   DSE, there could be multiple registries.

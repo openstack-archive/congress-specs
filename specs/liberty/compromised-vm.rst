@@ -60,17 +60,17 @@ Policy
 error(vm) :-
     nova:virtual_machine(vm),
     ids:ip_packet(src_ip, dst_ip),
-    neutron:port(vm, src_ip),	//finds out the port that has the VM’s IP
+    neutron:port(vm, src_ip),	//finds out the port that has the VM's IP
     ids:ip_blacklist(dst_ip).
 
 Policy actions
 -----------------
 
-* Monitoring: report/log the incident including the VM’s IP address, external
+* Monitoring: report/log the incident including the VM's IP address, external
     IP, etc.
 * Reactive: Invoke the nova API to add the VM to IDS security group restricting
     access to make changes. Invoke neutron to block all traffic to/from the
-    VM’s IP address. Alternatives are to restart the VM on a nova IDS
+    VM's IP address. Alternatives are to restart the VM on a nova IDS
     schedule filter (limiting traffic chaos while maintaining the ability to
     access the VM) and/or a no route network or removing the VM network
     interface(s).

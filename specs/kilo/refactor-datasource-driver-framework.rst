@@ -55,7 +55,7 @@ Example:
 error(vm) :-
     nova:virtual_machine(vm),
     ids:ip_packet(src_ip, dst_ip),
-    neutron:port(vm, src_ip), //finds out the port that has the VM’s IP
+    neutron:port(vm, src_ip), //finds out the port that has the VM's IP
     ids:ip_blacklist(dst_ip).
 
 
