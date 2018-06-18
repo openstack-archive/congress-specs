@@ -1,0 +1,10 @@
+Code-Review+1: Pierre Crégut <pierre.cregut@orange.com>
+Code-Review+2: Masahito Muroi <muroi.masahito@lab.ntt.co.jp>
+Code-Review+1: Akhil jain <akhil.jain@india.nec.com>
+Workflow+1: Eric Kao <ekcs.openstack@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 18 Jun 2018 17:52:54 +0000
+Reviewed-on: https://review.openstack.org/563799
+Project: openstack/congress-specs
+Branch: refs/heads/master
