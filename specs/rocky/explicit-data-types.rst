@@ -37,9 +37,10 @@ policy engines), and backwards-compatible with the standard ``agnostic`` engine
 and existing data source drivers.
 
 As an illustration of the need for extensibility and loose-coupling, consider
-that a SMT-based Z3 prover needs types that are as narrow as possible (e.g., enum{'ingress', 'egress'}), but another engine does not understand such narrow
-types. A data source driver then must specify its types in a way that
-works well for both engines.
+that a SMT-based Z3 prover needs types that are as narrow as possible
+(e.g., enum{'ingress', 'egress'}), but another engine does not understand
+such narrow types. A data source driver then must specify its types
+in a way that works well for both engines.
 
 
 Proposed change
@@ -57,9 +58,9 @@ we expect new ones to be introduced over time). To allow a policy engine to
 handle custom data types it does not "understand", we require that every
 custom data type inherit from another data type, all of which ultimately
 inherit from one of the base types all policy engines must handle. That way,
-when a policy engine encounters a value of a custom type it does not understand,
-the policy engine can fall back to handling the value according to an ancestor
-type the engine does understand.
+when a policy engine encounters a value of a custom type
+it does not understand, the policy engine can fall back to handling the value
+according to an ancestor type the engine does understand.
 
 What is a type?
 ---------------
@@ -67,8 +68,8 @@ What is a type?
 To define what a type is in this spec, we first establish four related
 concepts:
 
-#. *source representation*: the representation used in the data received from an
-   external source. Each external data source has its own source
+#. *source representation*: the representation used in the data received from
+   an external source. Each external data source has its own source
    representation defined outside of Congress. In an IP address example, one
    source could use IPv4 dotted decimal string ``"1.0.0.1"`` while another
    source could use IPv6 (short) hexadecimal string ``"::ffff:100:1"``.
@@ -193,19 +194,26 @@ could be specified for the ``flavors`` table in the Nova data source driver.
       'selector-type': 'DOT_SELECTOR',
       'field-translators':
           ({'fieldname': 'id', 'desc': 'ID of the flavor',
-            'translator': {'translation-type': 'VALUE', 'data-type': CongressStr}},
+            'translator': {'translation-type': 'VALUE',
+            'data-type': CongressStr}},
            {'fieldname': 'name', 'desc': 'Name of the flavor',
-            'translator': {'translation-type': 'VALUE', 'data-type': CongressStr}},
+            'translator': {'translation-type': 'VALUE',
+            'data-type': CongressStr}},
            {'fieldname': 'vcpus', 'desc': 'Number of vcpus',
-            'translator': {'translation-type': 'VALUE', 'data-type': CongressInt}},
+            'translator': {'translation-type': 'VALUE',
+            'data-type': CongressInt}},
            {'fieldname': 'ram', 'desc': 'Memory size in MB',
-            'translator': {'translation-type': 'VALUE', 'data-type': CongressInt}},
+            'translator': {'translation-type': 'VALUE',
+            'data-type': CongressInt}},
            {'fieldname': 'disk', 'desc': 'Disk size in GB',
-            'translator': {'translation-type': 'VALUE', 'data-type': CongressInt}},
+            'translator': {'translation-type': 'VALUE',
+            'data-type': CongressInt}},
            {'fieldname': 'ephemeral', 'desc': 'Ephemeral space size in GB',
-            'translator': {'translation-type': 'VALUE', 'data-type': CongressInt}},
+            'translator': {'translation-type': 'VALUE',
+            'data-type': CongressInt}},
            {'fieldname': 'rxtx_factor', 'desc': 'RX/TX factor',
-            'translator': {'translation-type': 'VALUE', 'data-type': CongressFloat}})
+            'translator': {'translation-type': 'VALUE',
+            'data-type': CongressFloat}})
             }
 
 
@@ -360,9 +368,9 @@ of an ancestor type. Ideally, every policy engine would recognize and support
 The only exception is that values of the non-string types
 inheriting from CongressStr need to be converted to string to be interprable
 as a value of CongressStr type.
-The CongressDataType abstract base class can include additional helper methods to
-make the interpretation easy. Below is an expanded CongressDataType definition
-including the additional helper methods.
+The CongressDataType abstract base class can include additional helper methods
+to make the interpretation easy. Below is an expanded
+CongressDataType definition including the additional helper methods.
 
 .. code-block:: python
 
@@ -386,7 +394,8 @@ including the additional helper methods.
           this type among the types the data consumer supports.
 
           :param supported_types: iterable collection of types
-          :returns: the subclass of CongressDataType which is the least ancestor
+          :returns: the subclass of CongressDataType
+                    which is the least ancestor
           '''
           target_types = frozenset(target_types)
           current_class = cls
@@ -399,15 +408,16 @@ including the additional helper methods.
 
       @classmethod
       def convert_to_ancestor(cls, value, ancestor_type):
-          '''Convert this type's exchange value to ancestor_type's exchange value
+          '''Convert this type's exchange value
+             to ancestor_type's exchange value
 
           Generally there is no actual conversion because descendant type value
           is directly interpretable as ancestor type value. The only exception
           is the conversion from non-string descendents to string. This
           conversion is needed by Agnostic engine does not support boolean.
 
-          .. warning:: undefined behavior if ancestor_type is not an ancestor of
-                       this type.
+          .. warning:: undefined behavior if ancestor_type is not
+                       an ancestor of this type.
           '''
           if ancestor_type == CongressStr:
               return json.dumps(value)
@@ -427,7 +437,7 @@ including the additional helper methods.
               raise cls.CongressDataTypeHierarchyError(
                   'More than one parent type found for {0}: {1}'
                       .format(cls, congress_parents))
-          
+
       class CongressDataTypeNoParent(TypeError):
           pass
 
@@ -543,11 +553,11 @@ No impact on REST API.
 Security impact
 ---------------
 
-There is little new security impact. Because new/custom types include new/custom
-data handling methods, it does theoretically increase the attack surface. Care
-needs to be taken to make sure the data handling methods are safe against
-malformed or possibility malicious input. There are well-known best practices to
-minimize such risks.
+There is little new security impact. Because new/custom types include
+new/custom data handling methods, it does theoretically increase the attack
+surface. Care needs to be taken to make sure the data handling methods are safe
+against malformed or possibility malicious input. There are well-known best
+practices to minimize such risks.
 
 Notifications impact
 --------------------

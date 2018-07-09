@@ -13,8 +13,9 @@ https://blueprints.launchpad.net/congress/+spec/configuration-files-validation
 Congress could be used by cloud operators to formalize the constraints between
 options defined in configuration files with the help of business rules written
 in Datalog and verify the compliance of their deployments automatically.
-It is intended to be complementary to config management systems that should only
-create valid configuration files and to integration tests such as RefStack.
+It is intended to be complementary to config management systems
+that should only create valid configuration files
+and to integration tests such as RefStack.
 
 
 Problem description
@@ -41,13 +42,13 @@ library. Configuration options are not independent:
 
 Constraints may be defined by different actors:
 
-* Service developers know the constraints on the options they define and usually
-  document them informally in the source code in the description field associated
-  to the option.
+* Service developers know the constraints on the options they define and
+  usually document them informally in the source code in the description field
+  associated to the option.
 
 * Cloud integrators will discover additional constraints when they develop
-  deployment code. Most of the time those options are only implicitly defined in
-  the source code of the scripts.
+  deployment code. Most of the time those options are only implicitly defined
+  in the source code of the scripts.
 
 * Administrators may want to enforce additional constraints reflecting the
   operational environment constraints.
@@ -80,13 +81,15 @@ deployer impact' section).
 
 The agent is responsible for conveying information on option values but also on
 their meta-data: layout in groups, type, flags such as deprecation, secret
-status, etc. Meta-data are described in templates which are in fact a collection
-of namespaces. Namespace contain the actual definition of meta-data. To avoid
-versionning problems, Meta-data must be obtained directly from the service.
+status, etc. Meta-data are described in templates which are in fact
+a collection of namespaces. Namespace contain the actual definition of
+meta-data. To avoid versionning problems, Meta-data must be obtained directly
+from the service.
 
-To limit the amount of traffic between the driver and agents, template files are
-hashed. Agents first reply to queries with hashes. The driver will request the
-content only if the hash is unknown. The same process is used for namespaces.
+To limit the amount of traffic between the driver and agents, template files
+are hashed. Agents first reply to queries with hashes. The driver will request
+the content only if the hash is unknown.
+The same process is used for namespaces.
 
 The only processing performed by agents on the option files is the removal of
 the values of secret options.
@@ -124,11 +127,11 @@ The definition of an option is split between three tables:
   defined in a specialized table. The option id is used again as a key to refer
   to the option table.
 
-Regarding the uniqueness of configuration meta-data in the extensional database,
-the driver must ensure that the ids are deterministic. An option identified
-by the same name, same group name and same namespace name should always be
-given the same unique id. The use of the MD5 hash function (there is no
-cryptographic requirement) guarantees uniqueness and determinism.
+Regarding the uniqueness of configuration meta-data in the extensional
+database, the driver must ensure that the ids are deterministic. An option
+identified by the same name, same group name and same namespace name should
+always be given the same unique id. The use of the MD5 hash function (there is
+no cryptographic requirement) guarantees uniqueness and determinism.
 
 Alternatives
 ------------
@@ -141,13 +144,14 @@ space beyond what is necessary.
 The proposed change must be considered as a work in progress. It does not fully
 address the problem of the location and the management of constraints. Most
 constraints are known by the service developers and should be maintained in the
-source code of services in a dedicated meta-data field of the option definition.
+source code of services in a dedicated meta-data field of
+the option definition.
 
 The use of an external agent to push a service configuration is not the only
 solution. The oslo-config library could be modified to push the configuration
-read by the service to the datasource driver. This could be done through the use
-of a hook in oslo-config. It would require additional configuration of the
-services to identify the endpoint.
+read by the service to the datasource driver. This could be done through
+the use of a hook in oslo-config. It would require additional configuration of
+the services to identify the endpoint.
 
 Policy
 ------
@@ -165,7 +169,8 @@ Z: lb-agt host
 
 ::
 
-    warn('Multinode OVS and linuxbridge use incompatible UDP ports', 'vxlan_conflicting_ovs_lb_udp_ports') :-
+    warn('Multinode OVS and linuxbridge use incompatible UDP ports',
+    'vxlan_conflicting_ovs_lb_udp_ports') :-
         vxlan_conflicting_ovs_lb_udp_ports()
 
     vxlan_conflicting_ovs_lb_udp_ports(Y, Z) :-
@@ -232,8 +237,8 @@ Other end user impact
 ---------------------
 
 None other than the usual management of the datasource and policy.
-Eventually, we would like to feed the engine with rules that are coming from and
-maintained in the services source code.
+Eventually, we would like to feed the engine with rules that are coming from
+and maintained in the services source code.
 
 Performance impact
 ------------------
@@ -252,16 +257,16 @@ the duplicated sending of files and templates, and to prevent overloading the
 driver. When the driver is activated, it periodically notifies agents, over the
 communication bus requesting their data description. An agent send description
 of the files it has been set to provide. The description contains hashes of
-namespaces, templates and configs. The driver then requests the resources, which
-hashes have not been recognized.
+namespaces, templates and configs. The driver then requests the resources,
+which hashes have not been recognized.
 
 We use the RPC server of the datasource associated DseNode.
 
 Other deployer impact
 ---------------------
 
-We add a dedicated group and options to configure an agent and the configuration
-files to manage.
+We add a dedicated group and options to configure an agent and the
+configuration files to manage.
 
 *validator.host*
 
@@ -282,7 +287,8 @@ An dict option describing the OpenStack services activated on this node. The
 values are also dictionaries. Keys are paths to config-files,
 values are paths to the associated templates. For instance::
 
-    congress: { /etc/congress/congress.conf:/opt/stack/congress/etc/congress-config-generator.conf }
+    congress: { /etc/congress/congress.conf:
+    /opt/stack/congress/etc/congress-config-generator.conf }
 
 
 Example config :
@@ -293,7 +299,8 @@ Example config :
     transport_url = rabbit://..@control:5672/
 
     [validator]
-    services = nova : { /etc/nova.conf:/opt/stack/nova/etc/nova/nova-config-generator.conf:
+    services = nova : { /etc/nova.conf:
+    /opt/stack/nova/etc/nova/nova-config-generator.conf:
     version = ocata
     host = node_A
 
@@ -349,8 +356,8 @@ sending of meta-data and files.
 Documentation impact
 ====================
 
-This feature introduces an agent component that requires separate configuration.
-It also defines new datasources.
+This feature introduces an agent component that requires separate
+configuration. It also defines new datasources.
 
 
 References
