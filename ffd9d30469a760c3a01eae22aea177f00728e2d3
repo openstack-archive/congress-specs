@@ -1,0 +1,9 @@
+Code-Review+1: Akhil jain <akhil.jain@india.nec.com>
+Code-Review+2: Eric Kao <ekcs.openstack@gmail.com>
+Workflow+1: Eric Kao <ekcs.openstack@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sun, 05 Aug 2018 22:40:02 +0000
+Reviewed-on: https://review.openstack.org/580711
+Project: openstack/congress-specs
+Branch: refs/heads/master
