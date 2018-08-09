@@ -271,7 +271,8 @@ Other contributors:
 Work items
 ----------
 
-For Rocky we do not plan to add built-ins. The basic Datalog language is sufficient for interesting examples.
+For Rocky we do not plan to add built-ins. The basic Datalog language is
+sufficient for interesting examples.
 
 During Stein iteration, built-ins and the treatment of polymorphism
 in the type-checker will be added.
