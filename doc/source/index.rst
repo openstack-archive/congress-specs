@@ -6,12 +6,11 @@ Congress Project Specifications
 
 Stein approved specs:
 
-..
-   .. toctree::
-      :glob:
-      :maxdepth: 1
+.. toctree::
+   :glob:
+   :maxdepth: 1
 
-      specs/stein/*
+   specs/stein/*
 
 Rocky approved specs:
 
