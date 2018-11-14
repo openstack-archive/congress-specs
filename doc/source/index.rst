@@ -4,6 +4,15 @@
 Congress Project Specifications
 ===============================
 
+Train approved specs:
+
+..
+   .. toctree::
+      :glob:
+      :maxdepth: 1
+
+      specs/train/*
+
 Stein approved specs:
 
 ..
