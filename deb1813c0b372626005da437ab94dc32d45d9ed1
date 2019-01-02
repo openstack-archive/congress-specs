@@ -1,0 +1,10 @@
+Code-Review+2: Eric Kao <ekcs.openstack@gmail.com>
+Code-Review+1: Akhil jain <akhil.jain@india.nec.com>
+Code-Review+1: zhaixiaojun <zhaixiaojun@gohighsec.com>
+Workflow+1: Eric Kao <ekcs.openstack@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 02 Jan 2019 18:57:53 +0000
+Reviewed-on: https://review.openstack.org/617878
+Project: openstack/congress-specs
+Branch: refs/heads/master
