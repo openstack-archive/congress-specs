@@ -4,9 +4,9 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-==========================================
+===================================
 Z3 as an alternative Datalog engine
-==========================================
+===================================
 
 https://blueprints.launchpad.net/congress/+spec/alternative-engine-z3
 

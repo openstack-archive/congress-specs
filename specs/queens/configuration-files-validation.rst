@@ -4,9 +4,9 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-==========================================
+========================================
 OpenStack Configuration Files Validation
-==========================================
+========================================
 
 https://blueprints.launchpad.net/congress/+spec/configuration-files-validation
 
