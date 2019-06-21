@@ -252,7 +252,7 @@ Example 1
   - Congress-CloudState equivalent:
     ::
 
-     CREATE SCHEMA vm_host_down; 
+     CREATE SCHEMA vm_host_down;
 
 - Create policy rule (view) identifying those servers whose host is down.
 

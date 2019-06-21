@@ -29,7 +29,7 @@ import os
 extensions = ['sphinx.ext.autodoc',
               'sphinx.ext.todo',
               'sphinx.ext.viewcode',
-              'oslosphinx'
+              'openstackdocstheme'
              ]
 
 todo_include_todos = True
@@ -91,7 +91,7 @@ man_pages = []
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'nature'
+html_theme = 'openstackdocs'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -265,3 +265,9 @@ epub_copyright = u'2014, Congress Contributors'
 
 # Allow duplicate toc entries.
 #epub_tocdup = True
+
+# -- Options for openstackdocstheme ---------------------------------------
+
+repository_name = 'openstack/congress-specs'
+bug_project = 'congress-specs'
+bug_tag = ''
